@@ -14,7 +14,7 @@ export default function Home({ error, posts }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Next.js & Wordpress Static</title>
+        <title>Next.js & Wordpress Dynamic</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
@@ -22,7 +22,9 @@ export default function Home({ error, posts }) {
         <h1 className={styles.title}>Headless Wordpress</h1>
 
         <p className={styles.description}>
-          Next.js with static data from Wordpress (fetching on build)
+          Next.js with dynamic data from Wordpress (fetching on each request)
+          <br />
+          Request time in app logs
         </p>
 
         <div className={styles.grid}>
