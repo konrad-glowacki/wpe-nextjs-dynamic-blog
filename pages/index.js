@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import axios from 'axios';
 import { print } from 'graphql';
 import gql from 'graphql-tag';
 
+import axios from '../lib/axios';
 import styles from '../styles/Home.module.css';
 import Post from '../components/Post';
 
@@ -72,8 +72,6 @@ const QUERY_POSTS = gql`
 
 export async function getServerSideProps() {
   try {
-    console.log(`Fetching posts from: ${process.env.GRAPHQL_API_URL}`);
-
     const response = await axios.post(process.env.GRAPHQL_API_URL, {
       query: print(QUERY_POSTS),
     });
